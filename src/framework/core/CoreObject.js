@@ -1,7 +1,7 @@
 import Events from 'minivents';
 import {extend} from '../extras/api';
 
-class WHSObject {
+class CoreObject {
   /**
    * Constructing WHS.Shape object.
    *
@@ -99,5 +99,5 @@ class WHSObject {
 }
 
 export {
-  WHSObject
+  CoreObject
 };

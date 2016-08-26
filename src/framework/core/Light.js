@@ -2,9 +2,9 @@ import * as THREE from 'three';
 
 import {Loop} from '../extensions/Loop';
 import {World} from './World';
-import {WHSObject} from './Object';
+import {CoreObject} from './CoreObject';
 
-class Light extends WHSObject {
+class Light extends CoreObject {
   constructor(params, type = 'light') {
     const _set = (x, y, z) => {
       this.x = x;
@@ -193,7 +193,7 @@ class Light extends WHSObject {
    * Clone light.
    */
   clone() {
-    return new Light(this.__params, this.type).copy(this);
+    return new Light(this.getParams(), this.type).copy(this);
   }
 
   /**
