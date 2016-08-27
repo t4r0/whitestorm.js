@@ -485,14 +485,7 @@ class World extends CoreObject {
     source.parent = null;
 
     source.emit('remove');
-
-    if (WHS.debug) {
-      console.debug(
-        `@WHS.Shape: Shape ${source.type} was removed from world`,
-        [source]
-      );
-    }
-
+    
     return this;
   }
 }
@@ -500,4 +493,3 @@ class World extends CoreObject {
 export {
   World
 };
-

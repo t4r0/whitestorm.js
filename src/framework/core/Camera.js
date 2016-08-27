@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
-import {Loop} from '../extensions/Loop';
-import {CoreObject} from './CoreObject';
+import { Loop } from '../extensions/Loop';
+import { CoreObject } from './CoreObject';
 
 class Camera extends CoreObject {
   constructor(params, type = 'camera') {
@@ -66,9 +66,6 @@ class Camera extends CoreObject {
 
     if (params instanceof THREE.Camera) this.setNative(params);
 
-    if (WHS.debug)
-      console.debug(`@WHS.Camera: Camera ${scope.type} found.`, scope);
-
     return scope;
   }
 
@@ -97,9 +94,6 @@ class Camera extends CoreObject {
         this[tag] = true;
       });
 
-      if (WHS.debug)
-        console.debug(`@WHS.Camera: Camera ${this.type} is ready.`, this);
-
       this.emit('ready');
 
       resolve(this);
@@ -122,12 +116,6 @@ class Camera extends CoreObject {
         console.error(err.message);
         reject();
       } finally {
-        if (WHS.debug) {
-          console.debug(
-            `@WHS.Camera: Camera ${_scope.type} was added to world.`,
-            [_scope, _scope.parent]
-          );
-        }
 
         resolve(_scope);
 
@@ -158,7 +146,7 @@ class Camera extends CoreObject {
       this.position = source.position.clone();
       this.rotation = source.rotation.clone();
     } else this.setParams(source.getParams());
-    
+
     this.type = source.type;
 
     return this;

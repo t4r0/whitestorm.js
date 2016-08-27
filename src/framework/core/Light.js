@@ -78,7 +78,6 @@ class Light extends CoreObject {
     this.type = type;
 
     if (params instanceof THREE.Light) this.setNative(params);
-    if (WHS.debug) console.debug(`@WHS.Light: Light ${scope.type} found.`, this);
 
     return this;
   }
@@ -118,9 +117,6 @@ class Light extends CoreObject {
         this[tag] = true;
       });
 
-      if (WHS.debug)
-        console.debug(`@WHS.Light: Light ${this.type} + ' is ready.`, this);
-
       this.emit('ready');
 
       resolve(this);
@@ -148,12 +144,6 @@ class Light extends CoreObject {
 
       if (this.helper) parentNative.add(this.helper);
       if (_native.target) parentNative.add(_native.target);
-      if (WHS.debug) {
-        console.debug(
-          `@WHS.Camera: Camera ${this.type} was added to world.`,
-          [this, this.parent]
-        );
-      }
 
       resolve(this);
       this.emit('ready');

@@ -106,7 +106,6 @@ class Shape extends CoreObject {
     );
 
     if (params instanceof THREE.Mesh) this.setNative(params);
-    if (WHS.debug) console.debug(`@WHS.Shape: Shape ${scope.type} found.`, scope);
 
     return scope;
   }
@@ -233,7 +232,6 @@ class Shape extends CoreObject {
 
           resolve(this);
 
-          if (WHS.debug) console.debug(`@WHS.Shape: Shape ${this.type} is ready.`, this);
         });
       });
     } else {
@@ -346,7 +344,6 @@ class Shape extends CoreObject {
 
         resolve(this);
 
-        if (WHS.debug) console.debug(`@WHS.Shape: Shape ${this.type} is ready.`, this);
       });
     }
   }
@@ -393,13 +390,6 @@ class Shape extends CoreObject {
           _native.addEventListener('collision', () => {
             this.emit('collide');
           });
-
-          if (WHS.debug) {
-            console.debug(
-              `@WHS.Shape: Shape ${this.type} was added to world.`,
-              [this, _parent]
-            );
-          }
         });
       });
     } else {
@@ -433,13 +423,7 @@ class Shape extends CoreObject {
         _native.addEventListener('collision', () => {
           this.emit('collide');
         });
-
-        if (WHS.debug) {
-          console.debug(
-            `@WHS.Shape: Shape ${this.type} was added to world.`,
-            [this, _parent]
-          );
-        }
+        
       });
     }
   }

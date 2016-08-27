@@ -87,13 +87,6 @@ class CoreObject {
 
     source.emit('remove');
 
-    if (WHS.debug) {
-      console.debug(
-        `@WHS.Shape: Shape ${source._type} was removed from world`,
-        [source]
-      );
-    }
-
     return this;
   }
 }

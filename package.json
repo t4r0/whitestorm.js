@@ -2,7 +2,7 @@
   "name": "whitestormjs",
   "version": "0.11.0",
   "description": "Framework for developing 3D web apps with physics.",
-  "main": "src/index.js",
+  "main": "build/whitestorm.js",
   "scripts": {
     "build": "gulp src:build",
     "dev": "gulp dev",
@@ -37,7 +37,6 @@
     "stats.js": "^0.16.0",
     "three": "^0.79.0",
     "three-orbit-controls": "^72.0.0",
-    "webworkify-webpack": "^1.1.0",
     "whs-ammo": "^0.0.6"
   },
   "devDependencies": {
@@ -161,25 +160,5 @@
         "jsx": true
       }
     }
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ]
-        }
-      ],
-      [
-        "browserify-shim"
-      ]
-    ]
-  },
-  "browserify-shim": {
-    "three": "global:THREE",
-    "whitestormjs": "global:WHS",
-    "whitestormjs-physijs": "global:Physijs"
   }
 }
