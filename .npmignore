@@ -3,3 +3,4 @@ test/
 media/
 .happypack/
 src/
+webpack.config.babel.js
